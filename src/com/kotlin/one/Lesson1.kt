@@ -12,9 +12,14 @@ fun main() {
     // Enforce `city` to be immutable and `temperature` mutable
     // Then print the sentence again after changing `temperature`
 
-    TODO(
-        "Exercise 1 Variables implementation"
-    )
+
+    val city = "Haiti"
+    var temperature = 30.5
+    println("It is $temperature°C in $city")
+    temperature = 26.5
+    println("It will be $temperature°C in $city tonight")
+
+
 
 
     // ✅ EXERCISE 2 Conditionals:
@@ -26,9 +31,15 @@ fun main() {
     // - If score between 50 and 60, print "Just passed!"
     // - If score between 61 and 99, print "Well done!"
 
-    TODO(
-        "Exercise 2 Conditionals implementation"
-    )
+    val score = 60;
+
+    when(score) {
+        100 -> println("Perfect score!")
+        in 0..49 -> println("You failed!")
+        in 50..60 -> println("Just passed!")
+        in 61..99 -> println("Well done!")
+        else -> println("Invalid score")
+    }
 
     // ✅ EXERCISE 3 list and Loops:
     // Create a list of your favorite fruits
@@ -36,18 +47,34 @@ fun main() {
     // Then, print the total number of fruits in the list
     // Ask the user to enter a fruit name and check if it's in the list
 
-    TODO(
-        "Exercise 3 List and Loops implementation"
-    )
+    val fruits = listOf("Apple","Banana","Mango","Pineapple","Grapes")
+    for (fruit in fruits) {
+        println(fruit.uppercase())
+    }
+    val totalFruits = fruits.size
+    println("Total number of fruits: $totalFruits")
+        println("Please enter a fruit name:")
+    val userInput = readlnOrNull()
+    if (userInput != null && userInput.isNotEmpty()) {
+        if (fruits.contains(userInput)) {
+            println("$userInput is in the list of favorite fruits!")
+        } else {
+            println("$userInput is not in the list of favorite fruits.")
+        }
+    }else {
+        println("No input provided.")
+    }
 
     // ✅EXERCISE 4 Elvis Operator:
     // Create a nullable variable `nickname` of type String? and assign it null
     // Print the number of characters in `nickname`
     // Print the nickname or "No nickname provided" if it's null using the Elvis operator
 
-    TODO(
-        "Exercise 4 Elvis Operator implementation"
-    )
+    val nickname: String? = null
+    val nicknameLength = nickname?.length ?: 0
+    println("Number of characters in nickname: $nicknameLength")
+    val displayNickname = nickname ?: "No nickname provided"
+    println(displayNickname)
 
 }
 
