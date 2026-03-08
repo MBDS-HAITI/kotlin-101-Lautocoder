@@ -71,7 +71,7 @@ fun main() {
     // Print the nickname or "No nickname provided" if it's null using the Elvis operator
 
     val nickname: String? = null
-    val nicknameLength = nickname?.length ?: 0
+    val nicknameLength = nickname?. length ?: 0
     println("Number of characters in nickname: $nicknameLength")
     val displayNickname = nickname ?: "No nickname provided"
     println(displayNickname)
